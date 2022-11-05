@@ -10,11 +10,11 @@
 <mat-sidenav-container class=red-container>
   <mat-sidenav #mainmenu mode="over">
     <mat-nav-list>
-      <a mat-list-item>Homefsdddd</a>
-      <a mat-list-item>Home</a>
-      <a mat-list-item>Home</a>
-      <a mat-list-item>Home</a>
-      <a mat-list-item>Home</a>
+      <a mat-list-item routerLink='/home' (click)="mainmenu.toggle()">Home</a>
+      <a mat-list-item routerLink='/courses' (click)="mainmenu.toggle()">Courses</a>
+      <a mat-list-item routerLink='/blogs' (click)="mainmenu.toggle()">Blogs</a>
+      <a mat-list-item routerLink='/user' (click)="mainmenu.toggle()">Account</a>
+      <a mat-list-item routerLink='/mydashboard' (click)="mainmenu.toggle()">Dashboard</a>
     </mat-nav-list>
 </mat-sidenav>
 
