@@ -4,13 +4,13 @@
 <mat-grid-list cols="1" rowHeight="26rem" gutterSize="15px">
 
   <mat-grid-tile *ngFor="let course of courses">
-    <mat-card class="example-card">
+    <mat-card class="example-card" routerLink="/courses/{{course.title}}">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{course?.title}}</mat-card-title>
       <!-- <mat-card-title>Shiba Inu</mat-card-title> -->
     </mat-card-header>
-    <img mat-card-image src="{{course?.imageUrl}}">
+    <img width="250" height="200" mat-card-image src="{{course?.imageUrl}}">
     <mat-card-content>
       <p>
       {{course?.body}}

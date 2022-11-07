@@ -24,7 +24,8 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { UserComponent } from './pages/user/user.component';
-import { PaymentsComponent } from './pages/payments/payments.component'
+import { PaymentsComponent } from './pages/payments/payments.component';
+import { SingleCourseComponent } from './pages/courses/single-course/single-course.component'
 
 
 
@@ -40,6 +41,7 @@ import { PaymentsComponent } from './pages/payments/payments.component'
     AuthComponent,
     UserComponent,
     PaymentsComponent,
+    SingleCourseComponent,
   ],
   imports: [
     BrowserModule,
