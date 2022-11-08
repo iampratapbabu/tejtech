@@ -3,7 +3,12 @@
         <button mat-icon-button>
           <mat-icon (click)="mainmenu.toggle();">menu</mat-icon>
           </button>
+
       <span>{{title}}</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon fontIcon="settings" (click)="secmenu.toggle();">menu</mat-icon>
+        </button>
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -16,6 +21,14 @@
       <a mat-list-item routerLink='/user' (click)="mainmenu.toggle()">Account</a>
       <a mat-list-item routerLink='/mydashboard' (click)="mainmenu.toggle()">Dashboard</a>
     </mat-nav-list>
+</mat-sidenav>
+
+<mat-sidenav #secmenu mode="over" position="end" >
+  <mat-nav-list>
+    <a mat-list-item routerLink='/login' (click)="mainmenu.toggle()">Login</a>
+
+    <a mat-list-item routerLink='/mydashboard' (click)="mainmenu.toggle()">Dashboard</a>
+  </mat-nav-list>
 </mat-sidenav>
 
 <mat-sidenav-content>

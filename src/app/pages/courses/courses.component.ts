@@ -9,6 +9,7 @@ export class CoursesComponent implements OnInit {
 
 courses=[ //app development
 	{
+    "id":"1",
 		"title":"Android Java Masterclass - Become an App Developer",
 		"body":"Improve your career options by learning Android app Development. Master Android Studio and build your first app today",
 		"courseUrl":"",
@@ -17,6 +18,7 @@ courses=[ //app development
 		"category":["app-development","frontend-development"]
 	},
 	{
+    "id":"2",
 		"title":"Angular - The Complete Guide (2022 Edition)",
 		"body":"Master Angular 13 (formerly “Angular 2”) and build awesome, reactive web apps with the successor of Angular.js",
 		"courseUrl":"",
@@ -25,6 +27,7 @@ courses=[ //app development
 		"category":["app-development","frontend-development"]
 	},
 	{
+    "id":"3",
 		"title":"Flutter & Dart - The Complete Guide [2022 Edition]",
 		"body":"A Complete Guide to the Flutter SDK & Flutter Framework for building native iOS and Android apps",
 		"courseUrl":"",
@@ -33,6 +36,7 @@ courses=[ //app development
 		"category":["app-development","frontend-development"]
 	},
 	{
+    "id":"4",
 		"title":"Ionic - Build iOS, Android & Web Apps with Ionic & Angular",
 		"body":"Build Native iOS & Android as well as Progressive Web Apps with Angular, Capacitor and the Ionic Framework (Ionic 4+).",
 		"courseUrl":"",
@@ -41,6 +45,7 @@ courses=[ //app development
 		"category":["app-development","frontend-development"]
 	},
 	{
+    "id":"5",
 		"title":"React Native Advanced Concepts",
 		"body":"Master the advanced topics of React Native: Animations, Maps, Notifications, Navigation and More!",
 		"courseUrl":"",
@@ -49,6 +54,7 @@ courses=[ //app development
 		"category":["app-development","frontend-development"]
 	},
 	{
+    "id":"6",
 		"title":"The Complete React Native + Hooks Course",
 		"body":"Understand React Native with Hooks, Context, and React Navigation.",
 		"courseUrl":"",
