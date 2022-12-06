@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { UserComponent } from './pages/user/user.component';
 import { PaymentsComponent } from './pages/payments/payments.component'
+import { FinanceComponent } from './pages/finance/finance.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'mydashboard',component:DashboardComponent},
   {path:'auth',component:AuthComponent},
   {path:'user',component:UserComponent},
+  {path:'finance',component:FinanceComponent},
   {path:'**',component:ErrorComponent}
 ];
 

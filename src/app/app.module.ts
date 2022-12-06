@@ -15,6 +15,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTabsModule} from '@angular/material/tabs';
+
 //pages and components
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { DemocompComponent } from './components/democomp/democomp.component';
@@ -25,7 +27,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { UserComponent } from './pages/user/user.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
-import { SingleCourseComponent } from './pages/courses/single-course/single-course.component'
+import { SingleCourseComponent } from './pages/courses/single-course/single-course.component';
+import { FinanceComponent } from './pages/finance/finance.component'
 
 
 
@@ -42,6 +45,7 @@ import { SingleCourseComponent } from './pages/courses/single-course/single-cour
     UserComponent,
     PaymentsComponent,
     SingleCourseComponent,
+    FinanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { SingleCourseComponent } from './pages/courses/single-course/single-cour
     MatListModule,
     MatCardModule,
     MatGridListModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

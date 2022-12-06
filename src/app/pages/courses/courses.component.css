@@ -2,3 +2,7 @@ mat-grid-tile{
   margin-top:10px;
   border-radius: 10px;
 }
+
+.mat-tab-label-container{
+  background-color:red;
+}
