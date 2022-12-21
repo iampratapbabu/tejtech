@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PushNotifications } from '@capacitor/push-notifications';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,28 @@ export class AppComponent {
   title = 'TejTech';
   loggedin=true;
 
+  token:string="";
 
   ngOnInit() {
-    console.log("ng onint fired of app component")
+    console.log("ng onint fired of app component");
+    this.notifications();
+  }
+
+  notifications(){
+    PushNotifications.addListener("registration",
+    (token)=>{
+      this.token=token.value;
+      alert(this.token);
+      alert("no push");
+    })
+
+    PushNotifications.addListener("pushNotificationReceived",
+    (notification)=>{
+      alert(JSON.stringify(notification));
+    })
+
+    PushNotifications.register();
+
   }
 
   menubutton(){

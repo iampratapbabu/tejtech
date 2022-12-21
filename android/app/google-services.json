@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "792560762068",
+    "project_id": "cultureholidays-india",
+    "storage_bucket": "cultureholidays-india.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792560762068:android:4536407bd048eeba6dcf41",
+        "android_client_info": {
+          "package_name": "holidays.culture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792560762068-nh0hvfd1u35qea0jg0r6q1v2qgepuuig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj2OfSGtj3gUgbXsmXbc7WmlqoEfAJZbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792560762068-nh0hvfd1u35qea0jg0r6q1v2qgepuuig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792560762068:android:ed76240696fc0d126dcf41",
+        "android_client_info": {
+          "package_name": "tej.tech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792560762068-nh0hvfd1u35qea0jg0r6q1v2qgepuuig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj2OfSGtj3gUgbXsmXbc7WmlqoEfAJZbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792560762068-nh0hvfd1u35qea0jg0r6q1v2qgepuuig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
