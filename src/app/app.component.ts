@@ -23,7 +23,7 @@ export class AppComponent {
     (token)=>{
       this.token=token.value;
       alert(this.token);
-      alert("no push");
+      
     })
 
     PushNotifications.addListener("pushNotificationReceived",
