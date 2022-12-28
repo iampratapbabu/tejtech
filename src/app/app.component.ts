@@ -18,12 +18,14 @@ export class AppComponent {
     this.notifications();
   }
 
+
+//push notification
   notifications(){
     PushNotifications.addListener("registration",
     (token)=>{
       this.token=token.value;
       alert(this.token);
-      
+
     })
 
     PushNotifications.addListener("pushNotificationReceived",
