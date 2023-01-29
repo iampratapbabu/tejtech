@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule }   from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 
 //material imports
@@ -16,6 +19,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 //pages and components
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -24,11 +31,12 @@ import { ErrorComponent } from './components/error/error.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { AuthComponent } from './pages/auth/auth.component';
 import { UserComponent } from './pages/user/user.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { SingleCourseComponent } from './pages/courses/single-course/single-course.component';
-import { FinanceComponent } from './pages/finance/finance.component'
+import { FinanceComponent } from './pages/finance/finance.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component'
 
 
 
@@ -41,17 +49,20 @@ import { FinanceComponent } from './pages/finance/finance.component'
     CoursesComponent,
     BlogsComponent,
     DashboardComponent,
-    AuthComponent,
     UserComponent,
     PaymentsComponent,
     SingleCourseComponent,
     FinanceComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     HttpClientModule,
+    FormsModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -59,7 +70,9 @@ import { FinanceComponent } from './pages/finance/finance.component'
     MatListModule,
     MatCardModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatInputModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@
 }
 
 mat-toolbar{
-  background-color:#202124;
+  /* background-color:#202124; */
 
 }
 
@@ -13,13 +13,13 @@ mat-toolbar{
 }
 
 .red-container {
-  color:black;
-  background-color: #FFDEE9;
+  /* color:black; */
+  /* background-color: #FFDEE9;
   background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 mat-sidenav{
-  background-color:#202124;
+  /* background-color:#202124; */
 
 
 

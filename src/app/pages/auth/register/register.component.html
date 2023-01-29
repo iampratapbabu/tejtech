@@ -1,0 +1,34 @@
+<div class="register">
+  <h2>SIGN UP</h2>
+  <form class="example-form" #formData="ngForm" (ngSubmit)="registerUser(formData)">
+    <mat-form-field class="example-full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" placeholder="John" name="firstname" ngModel>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" placeholder="Doe" name="lastname" ngModel>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Phone</mat-label>
+      <input matInput type="text" placeholder="987654321" name="phone" ngModel>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="email@xyz" name="email" ngModel>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="*******" name="password" ngModel>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput type="password" placeholder="*******" name="confirmPassword" ngModel>
+    </mat-form-field>
+    <button mat-button type="submit" color="warn">Register</button>
+
+  </form>
+  <p>Already have an accont <button mat-button color="warn" routerLink="/login">LOGIN</button></p>
+
+
+</div>
