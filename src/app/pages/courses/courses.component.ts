@@ -31,7 +31,6 @@ courses:any=[];
     this.http.get(url).subscribe(data=>{
       console.log(data);
       this.courses=data;
-
     })
   }
 
