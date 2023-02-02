@@ -24,7 +24,7 @@ export class AppComponent {
     PushNotifications.addListener("registration",
     (token)=>{
       this.token=token.value;
-      alert(this.token);
+      //alert(this.token);
 
     })
 
