@@ -1,3 +1,14 @@
+@media screen and (min-width: 480px) {
+  .main-site-container{
+    margin-right:35%;
+    margin-left:35%;
+  }
+}
+
+
+
+
+
 .container {
    margin : 0.5rem 1rem 0rem 1rem;
    height:91vh;
@@ -21,7 +32,6 @@ mat-toolbar{
 mat-sidenav{
   /* background-color:#202124; */
 
-
-
-
 }
+
+
