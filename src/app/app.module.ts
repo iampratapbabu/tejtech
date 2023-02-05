@@ -21,6 +21,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -73,6 +76,8 @@ import { RegisterComponent } from './pages/auth/register/register.component'
     MatTabsModule,
     MatInputModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
