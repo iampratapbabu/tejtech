@@ -15,12 +15,17 @@ export class AppComponent {
   token:string="";
 
   constructor(private auth:AuthService) { }
-
+  user:any;
   ngOnInit() {
     console.log("ng onint fired of app component");
     //this.notifications();
     this.auth.checkToken();
     this.loggedIn = this.auth.authenticatationState.value;
+    setTimeout(()=>{
+      if(this.auth.isAuthenticated()){
+        this.user=this.auth.userData;
+      }
+    },2000)
 
     
     
