@@ -1,8 +1,29 @@
 mat-grid-tile{
-  margin-top:10px;
+  margin-top:0px;
   border-radius: 10px;
 }
 
 .mat-tab-label-container{
   background-color:red;
+}
+
+.spin {
+  margin-left:8rem;
+  margin-top:15rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid grey;
+  border-top: 10px solid red;
+  border-bottom: 10px solid red;
+  animation: round 3s linear infinite;
+}
+
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

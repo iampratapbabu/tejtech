@@ -1,4 +1,4 @@
-<div class="register">
+<div *ngIf="!loading" class="register">
   <h2>SIGN UP</h2>
   <form class="example-form" #formData="ngForm" (ngSubmit)="registerUser(formData)">
     <mat-form-field class="example-full-width">
@@ -32,3 +32,5 @@
 
 
 </div>
+
+<div *ngIf="loading" class="spin"></div>

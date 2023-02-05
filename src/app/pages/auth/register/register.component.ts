@@ -13,28 +13,41 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private _snackBar: MatSnackBar,private http:HttpClient,private toastr: ToastrService) { }
+  constructor(private _snackBar: MatSnackBar,private http:HttpClient,private toastr: ToastrService,private router:Router) { }
+
+  loading:boolean=false;
 
   ngOnInit(): void {
+    localStorage.setItem('name',"tejpratap")
   }
 
   async registerUser(formdata:any){
     const {name,email,password,confirmPassword}= formdata.value;
     if(name == "" || email =="" || password == "" || confirmPassword == ""){
       this.openSnackBar("Please fill All fileds",'OK')
+    }else{
+      console.log(formdata.value);
+      this.loading=true;
+      let url="https://tejtech.onrender.com/api/users/signup"
+      let dev_url="http://localhost:8000/api/users/signup"
+      await this.http.post(dev_url,formdata.value).subscribe(res=>{
+        this.loading=false;
+        console.log(res);
+        let serverResoponse:any = res;
+        if(serverResoponse.status == "fail" || serverResoponse.status == "[SERVER ERROR]"){
+          this.toastr.error('Error',serverResoponse.msg);
+        }else{
+          let token = serverResoponse.token;
+          localStorage.setItem('token',token);
+          this.toastr.success('Account Created Please Login');
+          this.router.navigate(['/mydashboard']);
+        }
+  
+      },err=>{
+        console.log(err);
+        this.toastr.error(err.error.errormsg.message,'Error');
+      })
     }
-    console.log(formdata.value);
-
-    let url="https://tejtech.onrender.com/api/users/signup"
-    let dev_url="http://localhost:8000/api/users/signup"
-    await this.http.post(url,formdata.value).subscribe(res=>{
-      console.log(res);
-      this.toastr.success('SUCCESS', 'Please Login');
-    },err=>{
-      console.log(err);
-      this.toastr.error(err.error.errormsg.message,'Error');
-    })
-
   }
 
   openSnackBar(message: string, action: string) {

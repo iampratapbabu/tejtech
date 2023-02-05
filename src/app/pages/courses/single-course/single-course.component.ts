@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,14 +9,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SingleCourseComponent implements OnInit {
 
-  id:any;
-
-  constructor(private activatedRoute:ActivatedRoute) { }
+  course_id:any;
+  dev_url="http://localhost:8000/api/";
+  singleCourse:any;
+  constructor(private activatedRoute:ActivatedRoute,private http:HttpClient,) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params=>{
-    this.id = params.get('id');
-    
+    this.course_id = params.get('id');
+    this.loadSingleCourse();
+    })
+  };
+
+  async loadSingleCourse(){
+    await this.http.get(this.dev_url+`courses/single/${this.course_id}`).subscribe(res=>{
+      console.log(res);
+      this.singleCourse=res;
     })
   }
 

@@ -31,11 +31,21 @@
  
  <mat-sidenav #secmenu mode="over" position="end" >
    <mat-nav-list>
-     <mat-divider></mat-divider>
-     <a mat-list-item routerLink='/login' (click)="secmenu.toggle()"><mat-icon>lock</mat-icon>Login</a>
-     <mat-divider></mat-divider>
-     <a mat-list-item routerLink='/mydashboard' (click)="secmenu.toggle()"><mat-icon>dashboard</mat-icon>Dashboard</a>
-     <mat-divider></mat-divider>
+     
+     <div *ngIf="loggedIn">
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink='/mydashboard' (click)="secmenu.toggle()"><mat-icon>dashboard</mat-icon>Dashboard</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink='/logout' (click)="secmenu.toggle()"><mat-icon>lock</mat-icon>Logout</a>
+      <mat-divider></mat-divider>
+
+     </div>
+     <div *ngIf="!loggedIn">
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink='/login' (click)="secmenu.toggle()"><mat-icon>lock</mat-icon>Login</a>
+      <mat-divider></mat-divider>
+     </div>
+
    </mat-nav-list>
  </mat-sidenav>
  

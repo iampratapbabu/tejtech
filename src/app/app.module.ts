@@ -60,7 +60,7 @@ import { RegisterComponent } from './pages/auth/register/register.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot(), 
     HttpClientModule,
     FormsModule,
     MatToolbarModule,

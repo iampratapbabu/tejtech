@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PushNotifications } from '@capacitor/push-notifications';
+import { AuthService } from './services/auth.service';
 
 
 @Component({
@@ -9,13 +10,24 @@ import { PushNotifications } from '@capacitor/push-notifications';
 })
 export class AppComponent {
   title = 'TejTech';
-  loggedin=true;
+  loggedIn:boolean=false;
 
   token:string="";
+
+  constructor(private auth:AuthService) { }
 
   ngOnInit() {
     console.log("ng onint fired of app component");
     this.notifications();
+    this.checkLogin();
+    this.loggedIn=this.auth.auth;
+  }
+
+  checkLogin(){
+    let token = localStorage.getItem('token');
+    if(token){
+      this.auth.protectService(token);
+    }
   }
 
 

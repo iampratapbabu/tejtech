@@ -6,7 +6,7 @@
     <mat-tab label="Second"> Content 2 </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>
   </mat-tab-group>
-  <mat-grid-list cols="1" rowHeight="15rem" gutterSize="8px">
+  <mat-grid-list cols="1" rowHeight="13rem" gutterSize="8px">
 
     <div>
 
@@ -35,8 +35,8 @@
 </div>
 
 <div *ngIf="loading">
-  <h1>Loading...</h1>
-  <p>Please wait</p>
+  <div class="spin"></div>
+  <h1 style="margin-left:6rem;margin-top:2rem;font-size: 2rem;color: red;">Loading...</h1>
 </div>
 
 <div *ngIf="errorLoading">

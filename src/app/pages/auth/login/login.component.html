@@ -3,7 +3,7 @@
     <form class="example-form" #formData="ngForm" (ngSubmit)="loginUser(formData)">
         <mat-form-field class="example-full-width">
             <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="email@xyz" name="email" ngModel>
+          <input matInput type="email" placeholder="email@xyz" name="userid" ngModel>
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Password</mat-label>
@@ -16,4 +16,6 @@
     
 
 </div>
+
+<div *ngIf="loading" class="spin"></div>
 
