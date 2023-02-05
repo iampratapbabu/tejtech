@@ -36,7 +36,7 @@
       <mat-divider></mat-divider>
       <a mat-list-item routerLink='/mydashboard' (click)="secmenu.toggle()"><mat-icon>dashboard</mat-icon>Dashboard</a>
       <mat-divider></mat-divider>
-      <a mat-list-item routerLink='/logout' (click)="secmenu.toggle()"><mat-icon>lock</mat-icon>Logout</a>
+      <a mat-list-item (click)="secmenu.toggle()" (click)="logout()"><mat-icon>lock</mat-icon>Logout</a>
       <mat-divider></mat-divider>
 
      </div>

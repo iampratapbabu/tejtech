@@ -18,17 +18,15 @@ export class AppComponent {
 
   ngOnInit() {
     console.log("ng onint fired of app component");
-    this.notifications();
-    this.checkLogin();
-    this.loggedIn=this.auth.auth;
+    //this.notifications();
+    this.auth.checkToken();
+    this.loggedIn = this.auth.authenticatationState.value;
+
+    
+    
   }
 
-  checkLogin(){
-    let token = localStorage.getItem('token');
-    if(token){
-      this.auth.protectService(token);
-    }
-  }
+
 
 
 //push notification
@@ -51,6 +49,10 @@ export class AppComponent {
 
   menubutton(){
     console.log("menu button clicked");
+  }
+
+  logout(){
+    this.auth.logout();
   }
 
 

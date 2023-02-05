@@ -21,7 +21,9 @@ export class LoginComponent implements OnInit {
     private auth:AuthService,
     private router:Router) { }
   loading:boolean=false;
+
   ngOnInit(): void {
+    this.auth.loadUser();
   }
 
   async loginUser(logindata: any) {
