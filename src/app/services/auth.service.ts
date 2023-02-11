@@ -61,7 +61,7 @@ export class AuthService {
   async loginService(logindata:any){
     let url="https://tejtech.onrender.com/api/users/login"
       let dev_url="http://localhost:8000/api/users/login"
-      await this.http.post(url,logindata).subscribe(res=>{
+      await this.http.post(dev_url,logindata).subscribe(res=>{
         console.log(res);
         let serverResoponse:any = res;
         if(serverResoponse.status === "fail" || serverResoponse.status === "[SERVER ERROR]"){
@@ -73,7 +73,8 @@ export class AuthService {
           this.authenticatationState.next(true);
           this.isLoggedIn=true;
           this.userData=serverResoponse.user;
-          console.log(this.userData)
+          console.log(this.userData);
+          this.toastr.success("successfully logged in",'Success');
           this.router.navigate(['/mydashboard']);
           
         }
@@ -88,6 +89,7 @@ export class AuthService {
     this.authenticatationState.next(false);
     localStorage.removeItem('token');
     this.userData={};
+    this.toastr.success("Logged out",'Success');
     this.router.navigate(['/login']);
     window.location.reload();
   }

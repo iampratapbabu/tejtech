@@ -1,0 +1,20 @@
+.categories{
+    /* border: 1px solid red; */
+    padding: 10px;
+    border-radius: 20px;
+    margin:5px;;
+    color:white;
+    background-color: blue  ;
+}
+
+div{
+    margin-bottom: 10px;
+    height:5rem;
+    /* justify-content: center; */
+}
+
+div h3{
+    background-color:#eee;
+    font-weight: bold;
+    font-display: underline;
+}

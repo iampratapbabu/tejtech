@@ -15,6 +15,7 @@ export class CoursesComponent implements OnInit {
 courses:any=[];
 loading:boolean=true;
 errorLoading:boolean=false;
+categories:any=[];
 
 
 
@@ -32,7 +33,21 @@ errorLoading:boolean=false;
       console.log(data);
       this.courses=data;
       this.loading=false
+      this.loadCategories();
     })
+  }
+
+  loadCategories(){
+    const setCategory = new Set();
+    for(let course of this.courses.courses){
+      for(let category of course.category){
+       // console.log(category);  
+        setCategory.add(category);
+      }
+    }
+    //console.log(setCategory);
+    this.categories=setCategory;
+    console.log(this.categories); 
   }
 
 //   .subscribe(arg=>{

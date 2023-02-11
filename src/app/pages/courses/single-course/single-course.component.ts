@@ -31,4 +31,12 @@ export class SingleCourseComponent implements OnInit {
     })
   }
 
+  gotoPage(courseUrl:any){
+    window.open(courseUrl, "_blank");
+  }
+
+  buyCourse(courseid:String){
+    console.log("course id is:",courseid)
+  }
+
 }

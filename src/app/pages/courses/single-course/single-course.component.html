@@ -1,5 +1,16 @@
  <img width="350" height="200" mat-card-image src="{{singleCourse?.imageUrl}}">
 <h1>{{singleCourse?.title}}</h1>
 <p>{{singleCourse?.body}}</p>
-<p>{{singleCourse?.realUrl}}</p>
+
+<div>
+<h3>Categories: </h3>
+<span class="categories" *ngFor="let category of singleCourse?.category">{{category}}</span>
+</div>
+
+
+<mat-divider></mat-divider>
+<!-- <button mat-raised-button routerLink="{{singleCourse?.realUrl}}">Basic</button> -->
+<button mat-raised-button (click)="gotoPage(singleCourse?.realUrl)">Check Original Price</button>
+<button mat-raised-button (click)="buyCourse(singleCourse?._id)" style="color:green;margin-left: 10px;">Buy for ₹ 50</button>
+
 

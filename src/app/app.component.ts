@@ -20,10 +20,11 @@ export class AppComponent {
     console.log("ng onint fired of app component");
     //this.notifications();
     this.auth.checkToken();
-    this.loggedIn = this.auth.authenticatationState.value;
+    
     setTimeout(()=>{
       if(this.auth.isAuthenticated()){
         this.user=this.auth.userData;
+        
       }
     },2000)
 
@@ -31,6 +32,14 @@ export class AppComponent {
     
   }
 
+  checkLogin(){
+    if(this.auth.isAuthenticated()){
+      this.user=this.auth.userData;
+      
+    }
+    console.log("checkin clicked");
+    this.loggedIn = this.auth.authenticatationState.value;
+  }
 
 
 

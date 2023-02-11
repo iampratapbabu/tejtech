@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     private auth:AuthService,
     private router:Router) { }
+
   loading:boolean=false;
 
   ngOnInit(): void {

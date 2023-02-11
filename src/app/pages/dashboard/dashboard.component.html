@@ -1,1 +1,13 @@
-<p>dashboard works!</p>
+<div *ngIf="!loading">
+    <mat-card>
+        <h2>{{user?.firstname}} {{user?.lastname}}</h2>
+        <mat-card-content>Phone: {{user?.phone}}</mat-card-content>
+        <mat-card-content>Email: {{user?.email}}</mat-card-content>
+      </mat-card>
+    </div>
+
+
+  <div class="loader" *ngIf="loading==true">
+    <mat-spinner color="warn"></mat-spinner>
+    <h2 style="color:red;margin-top:1rem">Loading...</h2>
+  </div>
