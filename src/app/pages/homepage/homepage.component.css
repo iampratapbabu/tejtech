@@ -1,0 +1,7 @@
+.hero{
+    /* border: 1px solid red; */
+    border-radius: 15px;
+    margin:0.3em;
+    padding:10px;
+    background-color:#ffff;
+}
