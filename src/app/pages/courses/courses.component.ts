@@ -13,6 +13,7 @@ import { CoursesService } from 'src/app/services/courses.service';
 export class CoursesComponent implements OnInit {
 
 courses:any=[];
+tempCourse=[{title:"",body:"",realUrl:"",imageUrl:"",_id:"",}];
 loading:boolean=true;
 errorLoading:boolean=false;
 categories:any=[];
@@ -32,6 +33,7 @@ categories:any=[];
     this.http.get(url).subscribe(data=>{
       console.log(data);
       this.courses=data;
+      this.tempCourse=this.courses.courses;
       this.loading=false
       this.loadCategories();
     })
@@ -47,7 +49,22 @@ categories:any=[];
     }
     //console.log(setCategory);
     this.categories=setCategory;
-    console.log(this.categories); 
+    //console.log(this.categories); 
+  }
+
+  tabChange(e:any){
+    this.tempCourse=[];
+    //console.log(e.tab.textLabel);
+    for(let course of this.courses.courses){
+      for(let category of course.category){
+       // console.log(category);  
+          if(category === e.tab.textLabel){
+            this.tempCourse.push(course);
+          }
+      }
+    }
+    //console.log(this.tempCourse);
+
   }
 
 //   .subscribe(arg=>{
