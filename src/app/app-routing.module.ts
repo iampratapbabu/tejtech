@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'blogs',component:BlogsComponent},
   {path:'mydashboard',canActivate: [AuthGuardGuard],component:DashboardComponent},
   {path:'user',component:UserComponent},
-  {path:'finance',component:FinanceComponent},
+  {path:'finance',canActivate: [AuthGuardGuard],component:FinanceComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'**',component:ErrorComponent}

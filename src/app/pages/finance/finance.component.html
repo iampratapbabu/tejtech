@@ -1,1 +1,6 @@
-<p>finance works!</p>
+<h2>Balance Amount:<mat-icon>currency_rupees</mat-icon> {{financeStatus?.balance_amount}}.00</h2>
+<mat-card *ngFor="let transaction of financeStatus?.transactions" style="margin-bottom:10px;">
+    <mat-card-content>{{transaction?.amount}}</mat-card-content>
+    <mat-card-content>{{transaction?.type_of_expense}}</mat-card-content>
+
+  </mat-card>
