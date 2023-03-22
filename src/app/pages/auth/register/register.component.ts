@@ -3,6 +3,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../../../environments/environment';
+
 
 
 
@@ -28,9 +30,9 @@ export class RegisterComponent implements OnInit {
     }else{
       console.log(formdata.value);
       this.loading=true;
-      let url="https://tejtech.onrender.com/api/users/signup"
-      let dev_url="http://localhost:8000/api/users/signup"
-      await this.http.post(dev_url,formdata.value).subscribe(res=>{
+    
+      let url=`${environment.api}/api/users/signup`
+      this.http.post(url,formdata.value).subscribe(res=>{
         this.loading=false;
         console.log(res);
         let serverResoponse:any = res;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-finance',
@@ -23,7 +24,7 @@ export class FinanceComponent implements OnInit {
   }
 
   getFinanceStatus(){
-    this.http.get(`http://localhost:8000/api/finance/status/${this.auth.userData._id}`).subscribe(res=>{
+    this.http.get(`${environment.api}/api/finance/status/${this.auth.userData._id}`).subscribe(res=>{
       console.log(res);
       this.tempfinanceStatus=res;
       this.financeStatus=this.tempfinanceStatus.finance;

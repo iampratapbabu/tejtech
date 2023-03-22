@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +47,7 @@ export class AuthService {
           'x-access-token': token
       })
       }
-      this.http.get('http://localhost:8000/api/users/protect',httpOptions).subscribe(res=>{
+      this.http.get(`${environment.api}/api/users/protect`,httpOptions).subscribe(res=>{
       console.log(res);
       this.userData = res;
       this.authenticatationState.next(true);
@@ -59,9 +61,10 @@ export class AuthService {
   }
 
   async loginService(logindata:any){
-    let url="https://tejtech.onrender.com/api/users/login"
-      let dev_url="http://localhost:8000/api/users/login"
-      await this.http.post(dev_url,logindata).subscribe(res=>{
+    console.log(environment.api);
+   
+      let url=`${environment.api}/api/users/login`;
+      this.http.post(url,logindata).subscribe(res=>{
         console.log(res);
         let serverResoponse:any = res;
         if(serverResoponse.status === "fail" || serverResoponse.status === "[SERVER ERROR]"){
