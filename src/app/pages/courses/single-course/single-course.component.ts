@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-single-course',
@@ -23,8 +23,8 @@ export class SingleCourseComponent implements OnInit {
   };
 
   async loadSingleCourse(){
-    let url=`${environment.api}`;
-    this.http.get(url+`courses/single/${this.course_id}`).subscribe(res=>{
+   
+    this.http.get(`${environment.api}/api/courses/single/${this.course_id}`).subscribe(res=>{
       console.log(res);
       this.singleCourse=res;
     },err=>{
