@@ -1,36 +1,88 @@
-<div *ngIf="!loading" class="register">
-  <h2>SIGN UP</h2>
-  <form class="example-form" #formData="ngForm" (ngSubmit)="registerUser(formData)">
-    <mat-form-field class="example-full-width">
-      <mat-label>First Name</mat-label>
-      <input matInput type="text" placeholder="John" name="firstname" ngModel>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Last Name</mat-label>
-      <input matInput type="text" placeholder="Doe" name="lastname" ngModel>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Phone</mat-label>
-      <input matInput type="text" placeholder="987654321" name="phone" ngModel>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="email@xyz" name="email" ngModel>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="*******" name="password" ngModel>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      <input matInput type="password" placeholder="*******" name="confirmPassword" ngModel>
-    </mat-form-field>
-    <button mat-button type="submit" color="warn">Register</button>
 
+
+<div *ngIf="!loading" class="container">
+  <h2 class="login-title">Register</h2>
+
+  <form class="login-form"  #formData="ngForm" (ngSubmit)="registerUser(formData)">
+    <div>
+      <label for="firstname">First Name </label>
+      <input
+             id="firstname"
+             type="text"
+             placeholder="John"
+             name="firstname"
+             ngModel
+             required
+             />
+    </div>
+    <div>
+      <label for="lasname">Last Name </label>
+      <input
+             id="lastname"
+             type="text"
+             placeholder="Thomas"
+             name="lastname"
+             ngModel
+             required
+             />
+    </div>
+    <div>
+      <label for="email">Phone </label>
+      <input
+             id="phone"
+             type="number"
+             placeholder="+91xxxxxxxxxxx"
+             name="phone"
+             ngModel
+             required
+             />
+    </div>
+
+    <div>
+      <label for="email">Email </label>
+      <input
+             id="email"
+             type="email"
+             placeholder="me@example.com"
+             name="email"
+             ngModel
+             required
+             />
+    </div>
+
+    <div>
+      <label for="password">Password </label>
+      <input
+             id="password"
+             type="password"
+             placeholder="Password"
+             name="password"
+             ngModel
+             required
+             />
+    </div>
+    <div>
+      <label for="password">Confirm Password </label>
+      <input
+             id="confirmPassword"
+             type="password"
+             placeholder="Confirm Password"
+             name="confirmPassword"
+             ngModel
+             required
+             />
+    </div>
+
+    <button class="btn btn--form" type="submit" value="Log in">
+      Register
+    </button>
   </form>
-  <p>Already have an accont <button mat-button color="warn" routerLink="/login">LOGIN</button></p>
-
+  <div class="signup-link">
+    <h4>Already have an accont <a  color="warn" routerLink="/login">LOGIN</a></h4>
+  </div>
 
 </div>
 
-<div *ngIf="loading" class="spin"></div>
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>

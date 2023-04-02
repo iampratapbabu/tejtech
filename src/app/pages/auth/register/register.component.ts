@@ -41,7 +41,6 @@ export class RegisterComponent implements OnInit {
         }else{
           let token = serverResoponse.token;
           localStorage.setItem('token',token);
-          this.toastr.success('Account Created Please Login');
           this.router.navigate(['/mydashboard']);
         }
   

@@ -1,36 +1,68 @@
-.my-login{
-    background-color: red;
-}
-
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-
+  
+  .login-title {
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
   }
   
-  .example-full-width {
-    width: 100%;
+  .login-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
   }
-
   
-.spin {
-  margin-left:8rem;
-  margin-top:15rem;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 10px solid grey;
-  border-top: 10px solid red;
-  border-bottom: 10px solid red;
-  animation: round 3s linear infinite;
-}
-
-@keyframes round {
-  0% {
-    transform: rotate(0deg);
+  .login-form label {
+    display: block;
+    margin-bottom: 8px;
   }
-  100% {
-    transform: rotate(360deg);
+  
+  .login-form input {
+    width: 90%;
+    padding: 1.2rem;
+    border-radius: 9px;
+    border: none;
+    padding-left: 15px;
   }
-}
+  
+  .login-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(253, 242, 233, 0.5);
+  }
+  
+  .btn--form {
+    background-color:#3F51B5;
+    color: #fdf2e9;
+    align-self: end;
+    padding: 8px;
+  }
+  
+  .btn,
+  .btn:link,
+  .btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 9px;
+    border: none;
+  
+    cursor: pointer;
+    font-family: inherit;
+  
+    transition: all 0.3s;
+  }
+  
+  button {
+    outline: 1px solid#3F51B5;
+  }
+  
+  .btn--form:hover {
+    background-color: #fdf2e9;
+    outline: 1px solid#fdf2e9;
+    color:#3F51B5;
+  }
+  .signup-link{
+    margin: 0.5rem;
+    text-align: center;
+  }

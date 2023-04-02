@@ -7,7 +7,6 @@
     </div>
 
 
-  <div class="loader" *ngIf="loading==true">
-    <mat-spinner color="warn"></mat-spinner>
-    <h2 style="color:red;margin-top:1rem">Loading...</h2>
+  <div *ngIf="loading">
+    <app-loader></app-loader>
   </div>

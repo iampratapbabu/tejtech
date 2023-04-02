@@ -39,7 +39,8 @@ import { PaymentsComponent } from './pages/payments/payments.component';
 import { SingleCourseComponent } from './pages/courses/single-course/single-course.component';
 import { FinanceComponent } from './pages/finance/finance.component';
 import { LoginComponent } from './pages/auth/login/login.component';
-import { RegisterComponent } from './pages/auth/register/register.component'
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { LoaderComponent } from './components/loader/loader.component'
 
 
 
@@ -57,6 +58,7 @@ import { RegisterComponent } from './pages/auth/register/register.component'
     FinanceComponent,
     LoginComponent,
     RegisterComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

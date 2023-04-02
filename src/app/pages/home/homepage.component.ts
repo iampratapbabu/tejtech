@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomepageComponent implements OnInit {
 
   title="TejTech";
+  isLoading:boolean=true;
 
   constructor(private router:Router,private http:HttpClient,) { }
 

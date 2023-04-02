@@ -1,21 +1,44 @@
-<div class = "mylogin">
-    <h2>LOGIN</h2>
-    <form class="example-form" #formData="ngForm" (ngSubmit)="loginUser(formData)">
-        <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-          <input matInput type="email" placeholder="email@xyz" name="userid" ngModel>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="*******" name="password" ngModel>
-          </mat-form-field>
-          <button mat-button type="submit" color="warn">Login</button>
 
-    </form>
-    <p>Don't have an accont <button mat-button color="warn" routerLink="/register">Sign UP</button></p>
-    
+<div *ngIf="!loading" class="container">
+  <h2 class="login-title">LOG IN</h2>
+
+  <form class="login-form"  #formData="ngForm" (ngSubmit)="loginUser(formData)">
+
+    <div>
+      <label for="email">EMAIL </label>
+      <input
+             id="email"
+             type="email"
+             placeholder="me@example.com"
+             name="userid"
+             ngModel
+             required
+             />
+    </div>
+
+    <div>
+      <label for="password">PASSWORD </label>
+      <input
+             id="password"
+             type="password"
+             placeholder="password"
+             name="password"
+             ngModel
+             required
+             />
+    </div>
+
+    <button class="btn btn--form" type="submit" value="Log in">
+      Log in
+    </button>
+  </form>
+  <div class="signup-link">
+    <h4>Don't have an accont <a  color="warn" routerLink="/register">SIGN UP</a></h4>
+  </div>
 
 </div>
 
-<div *ngIf="loading==true" class="spin"></div>
+<div *ngIf="loading">
+  <app-loader></app-loader>
+</div>
 

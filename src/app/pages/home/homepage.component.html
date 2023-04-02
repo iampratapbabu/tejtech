@@ -1,24 +1,8 @@
-<div class="hero">
-    <button  mat-raised-button><mat-icon>home</mat-icon>About</button>
-    <h3>A Platform Build For Students by a student You get Access to all Important Courses to upskill yourself</h3>
-</div>
-<div class="hero">
-    <button  mat-raised-button routerLink="/courses"><mat-icon>book</mat-icon>courses</button>
-    <h3>All Courses available here by Domain so you can choose easily</h3>
-</div>
-<div class="hero">
-    <button  mat-raised-button routerLink="/blogs"><mat-icon>rss_feed</mat-icon>Blogs</button>
-    <h3>Share your thoughts by writing blogs</h3>
-</div>
-<div class="hero">
-    <button  mat-raised-button routerLink="/finance"><mat-icon>currency_rupees</mat-icon>Finance</button>
-    <h3>Mange your finances using finance feature of this app</h3>
-</div>
-<div class="hero">
-    <button mat-raised-button><mat-icon>person</mat-icon>Tej pratap</button>
-    <h3>This application is developed and managed by Tej Pratap</h3>
+<div *ngIf="isLoading">
+    <app-loader></app-loader>
 </div>
 
-<!-- <mat-spinner color="warn"></mat-spinner> -->
-
+<div *ngIf="!isLoading">
+    <h2>Homepage</h2>
+</div>
 
