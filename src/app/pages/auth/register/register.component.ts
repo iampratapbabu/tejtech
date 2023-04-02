@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from '../../../../environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 
@@ -15,12 +16,21 @@ import { environment } from '../../../../environments/environment';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private _snackBar: MatSnackBar,private http:HttpClient,private toastr: ToastrService,private router:Router) { }
+  constructor(
+    private _snackBar: MatSnackBar,
+    private http:HttpClient,
+    private toastr: ToastrService,
+    private router:Router,
+    private auth:AuthService
+    ) { }
 
   loading:boolean=false;
 
   ngOnInit(): void {
     localStorage.setItem('name',"tejpratap")
+    this.auth.loadUser().then(res=>{
+      this.router.navigateByUrl('/mydashboard')
+    })
   }
 
   async registerUser(formdata:any){
@@ -36,17 +46,19 @@ export class RegisterComponent implements OnInit {
         this.loading=false;
         console.log(res);
         let serverResoponse:any = res;
-        if(serverResoponse.status == "fail" || serverResoponse.status == "[SERVER ERROR]"){
-          this.toastr.error('Error',serverResoponse.msg);
-        }else{
+        if(serverResoponse.status === "success"){
+          console.log("success block")
           let token = serverResoponse.token;
           localStorage.setItem('token',token);
-          this.router.navigate(['/mydashboard']);
+          window.location.reload();
+          
+        }else{
+          this.toastr.error('Error',serverResoponse.msg);
         }
   
       },err=>{
         console.log(err);
-        this.toastr.error(err.error.errormsg.message,'Error');
+        this.toastr.error(err,'Server Error');
       })
     }
   }

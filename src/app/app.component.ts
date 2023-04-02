@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { AuthService } from './services/auth.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -17,16 +18,10 @@ export class AppComponent {
   constructor(private auth:AuthService) { }
   user:any;
   ngOnInit() {
-    console.log("ng onint fired of app component");
+    console.log(`Backend on ${environment.api}`);
     //this.notifications();
-    this.auth.checkToken();
+    this.auth.loadUser();
     
-    setTimeout(()=>{
-      if(this.auth.isAuthenticated()){
-        this.user=this.auth.userData;
-        
-      }
-    },2000)
 
     
     
@@ -35,7 +30,6 @@ export class AppComponent {
   checkLogin(){
     if(this.auth.isAuthenticated()){
       this.user=this.auth.userData;
-      
     }
     console.log("checkin clicked");
     this.loggedIn = this.auth.authenticatationState.value;

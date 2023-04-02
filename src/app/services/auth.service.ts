@@ -19,6 +19,7 @@ export class AuthService {
 
   isLoggedIn:boolean=false;
   authenticatationState = new BehaviorSubject(false);
+  userstate = new BehaviorSubject({});
   userData:any;
   authLoading:boolean=false;
 
@@ -27,19 +28,9 @@ export class AuthService {
   }
 
 
-  checkToken(){
-    let token=localStorage.getItem('token');
-    if(token){
-      console.log("token added",token)
-      this.authenticatationState.next(true);
-      this.loadUser();
-    }else{
-      console.log("token not found");
-      this.authenticatationState.next(false);
-    }
-  }
 
   async loadUser(){
+   return new Promise<void>((resolve, reject) => {
     let token = localStorage.getItem('token');
     if(token){
       const httpOptions = {
@@ -48,15 +39,19 @@ export class AuthService {
       })
       }
       this.http.get(`${environment.api}/api/users/protect`,httpOptions).subscribe(res=>{
-      console.log(res);
       this.userData = res;
+      this.userstate.next(res);
       this.authenticatationState.next(true);
+      console.log("user loaded",this.userstate.value);
+      resolve(this.userData);
       },err=>{
         console.log(err);
-        this.logout();
-        this.toastr.error(err.error.errormsg.message,'Error');
+        this.toastr.error(err.message,'Error');
+        reject(err);
       });
     }
+
+   })
 
   }
 
@@ -92,9 +87,10 @@ export class AuthService {
     this.authenticatationState.next(false);
     localStorage.removeItem('token');
     this.userData={};
+    this.userstate.next({});
     this.toastr.success("Logged out",'Success');
     this.router.navigate(['/login']);
-    window.location.reload();
+   
   }
 
 

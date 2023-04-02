@@ -23,8 +23,13 @@ export class LoginComponent implements OnInit {
 
   loading:boolean=false;
 
-  ngOnInit(): void {
-    this.auth.loadUser();
+  async ngOnInit(): Promise<void> {
+    this.auth.loadUser().then(res=>{
+      this.router.navigate(['/home'])
+    })
+    .catch(err=>{
+      this.auth.logout();
+    })
   }
 
   async loginUser(logindata: any) {
