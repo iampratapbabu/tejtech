@@ -43,17 +43,45 @@ export class AuthService {
       this.userstate.next(res);
       this.authenticatationState.next(true);
       console.log("user loaded",this.userstate.value);
-      resolve(this.userData);
+      return resolve(this.userData);
       },err=>{
         console.log(err);
-        this.toastr.error(err.message,'Error');
-        reject(err);
+        this.toastr.error(err.error.message,'Error');
+        return reject(err);
       });
+    }else{
+      return reject("No Token Found")
     }
 
    })
 
   }
+
+  async loadUserReturn(){
+   
+     let token = localStorage.getItem('token');
+     if(token){
+       const httpOptions = {
+         headers: new HttpHeaders({
+           'x-access-token': token
+       })
+       }
+       this.http.get(`${environment.api}/api/users/protect`,httpOptions).subscribe(res=>{
+       this.userData = res;
+       this.userstate.next(res);
+       this.authenticatationState.next(true);
+       console.log("user loaded",this.userstate.value);
+       return res;
+       },err=>{
+         console.log(err);
+         this.toastr.error(err.error.message,'Error');
+         return err;
+       });
+     }
+ 
+   
+ 
+   }
 
   async loginService(logindata:any){
     console.log(environment.api);

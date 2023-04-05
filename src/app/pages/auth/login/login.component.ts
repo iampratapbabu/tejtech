@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/home'])
     })
     .catch(err=>{
-      this.auth.logout();
+     console.log(err);
     })
   }
 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this.auth.loginService(logindata.value)
       console.log(logindata.value);
-      this.loading = false;
+     
     }
   }
 

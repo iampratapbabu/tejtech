@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api:'http://localhost:8000'
+  api:'https://tejtech.onrender.com',
+  local:"http://localhost:8000"
 };
 
 /*

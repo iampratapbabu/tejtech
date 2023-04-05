@@ -20,8 +20,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   
     this.auth.loadUser().then(res=>{
-      this.user = this.auth.userData;
+      this.user = res;
       this.loading=false;
+    }).catch(err=>{
+      console.log(err);
     })
 
 

@@ -1,9 +1,17 @@
   
+  .card{
+    background-color: #fff;
+    
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2rem !important;
+  }
   .login-title {
     padding: 15px;
     font-size: 22px;
     font-weight: 600;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
   }
   
   .login-form {
@@ -22,12 +30,14 @@
     padding: 1.2rem;
     border-radius: 9px;
     border: none;
+    font-size:17px;
     padding-left: 15px;
+    border: 2px solid grey;
   }
   
   .login-form input:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(253, 242, 233, 0.5);
+    outline: invert;
+    box-shadow: 0 0 0 4px rgba(19, 128, 195, 0.5);
   }
   
   .btn--form {

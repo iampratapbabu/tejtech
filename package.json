@@ -25,6 +25,7 @@
     "@capacitor/core": "^4.5.0",
     "@capacitor/ios": "^4.5.0",
     "@capacitor/push-notifications": "^4.1.2",
+    "@capacitor/status-bar": "^4.1.1",
     "capacitor-resources": "^2.0.5",
     "ngx-toastr": "^11.3.3",
     "primeflex": "^3.2.1",

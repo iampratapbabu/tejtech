@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { AuthService } from './services/auth.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,13 +16,28 @@ export class AppComponent {
 
   token:string="";
 
-  constructor(private auth:AuthService) { }
+  constructor(
+    private auth:AuthService,
+    private router:Router
+    ) { }
   user:any;
-  ngOnInit() {
+
+
+  async ngOnInit() {
     console.log(`Backend on ${environment.api}`);
     //this.notifications();
-    this.auth.loadUser();
+
+    this.auth.loadUser().then(res=>{
+      console.log(res);
+      //this.router.navigate(['/mydashboard']);
+    })
+    .catch(err=>{
+      console.log(err);
+      //this.auth.logout();
+      //this.router.navigate(['/login'])
+    });
     
+    //console.log(await this.auth.loadUserReturn());
 
     
     

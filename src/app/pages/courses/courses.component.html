@@ -4,7 +4,7 @@
   <mat-tab-group (selectedTabChange)="tabChange($event)">
     <mat-tab *ngFor="let category of categories" label={{category}} class="tab">
 
-      <mat-grid-list cols="1" rowHeight="25rem" gutterSize="20px">
+      <mat-grid-list cols="1" rowHeight="27rem" gutterSize="20px">
         <div>
           <mat-grid-tile *ngFor="let course of tempCourse">
             <mat-card fxFlexAlign="stretch">

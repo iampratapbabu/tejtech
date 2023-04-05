@@ -30,6 +30,8 @@ export class RegisterComponent implements OnInit {
     localStorage.setItem('name',"tejpratap")
     this.auth.loadUser().then(res=>{
       this.router.navigateByUrl('/mydashboard')
+    }).catch(err=>{
+      console.log(err);
     })
   }
 
