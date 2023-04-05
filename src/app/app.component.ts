@@ -34,7 +34,7 @@ export class AppComponent {
     .catch(err=>{
       console.log(err);
       //this.auth.logout();
-      //this.router.navigate(['/login'])
+      this.router.navigate(['/login'])
     });
     
     //console.log(await this.auth.loadUserReturn());

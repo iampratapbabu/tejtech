@@ -22,9 +22,29 @@ mat-toolbar{
 
 }
 
-.app-name{
-  font-family: 'Montserrat', sans-serif;
+.app-name-background{
+  
 }
+
+
+.app-name{
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  background-color: azure;
+  height: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: blue;
+  font-weight: bolder;
+}
+
+.app-name-rest{
+  height: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: azure;
+}
+
+
 
 .example-spacer {
   flex: 1 1 auto;

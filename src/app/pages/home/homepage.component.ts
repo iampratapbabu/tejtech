@@ -29,6 +29,9 @@ export class HomepageComponent implements OnInit {
     this.auth.loadUser().then(res=>{
       this.isLoading=false;
       this.user=this.auth.userstate.value;
+    }).catch(err=>{
+      console.log(err);
+      this.router.navigate(['/login'])
     })
 
 
