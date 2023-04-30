@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
-import { PushNotifications } from '@capacitor/push-notifications';
-import { AuthService } from './services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { PushNotifications } from '@capacitor/push-notifications';;
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent {
+export class HeaderComponent implements OnInit {
+
   title = 'mFinance';
   loggedIn:boolean=false;
 
@@ -78,6 +79,8 @@ export class AppComponent {
   logout(){
     this.auth.logout();
   }
+
+
 
 
 }

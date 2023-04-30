@@ -1,86 +1,12 @@
-<div class="main-site-container">
-  <mat-toolbar color="primary"> 
-    <!-- primary accent warn -->
-     <mat-toolbar-row>
-         <button mat-icon-button>
-           <mat-icon (click)="mainmenu.toggle();">menu</mat-icon>
-          </button>
-         
-      <div class="app-name-background">
-        <span class="app-name">m</span>
-      </div> 
-        <span class="app-name-rest">Finance</span>
-         
 
-       <span class="example-spacer"></span>
+  <div  class="container">
+    <!-- <p> token-> {{token}}</p> -->
+    <router-outlet></router-outlet>
 
-       <!-- menu -->
-       <button  (click)="checkLogin()" mat-button [matMenuTriggerFor]="menu"><mat-icon>account_circle</mat-icon></button>
-       <mat-menu #menu="matMenu">
-       <div *ngIf="loggedIn">
-        <button mat-menu-item routerLink='/mydashboard' ><mat-icon>person</mat-icon>{{user?.firstname}}</button>
-        <button mat-menu-item routerLink='/mydashboard' ><mat-icon>dashboard</mat-icon>Dashboard</button>
-        <button mat-menu-item  (click)="logout()"><mat-icon>lock</mat-icon>Logout</button>
-       </div>
-       <div *ngIf="!loggedIn">
-        <button mat-menu-item routerLink='/login'><mat-icon>lock</mat-icon>Login</button>
-       </div>
-     </mat-menu>
-      
-        <!-- this is secondary sidenae -->
-       <!-- <button mat-icon-button>
-         <mat-icon (click)="secmenu.toggle();">account_circle</mat-icon>
-         </button> -->
-     </mat-toolbar-row>
- </mat-toolbar>
- 
- <mat-sidenav-container class=red-container>
-   <mat-sidenav #mainmenu mode="over">
-     <mat-nav-list>
-
-       <mat-divider></mat-divider>
-       <a mat-list-item routerLink='/home' (click)="mainmenu.toggle()"><mat-icon>home</mat-icon>Home</a>
-       <mat-divider></mat-divider>
-       <a mat-list-item routerLink='/courses' (click)="mainmenu.toggle()"><mat-icon>book</mat-icon>Courses</a>
-       <mat-divider></mat-divider>
-       <a mat-list-item routerLink='/finance' (click)="mainmenu.toggle()"><mat-icon>currency_rupees</mat-icon>Finance</a>
-       <mat-divider></mat-divider>
-     </mat-nav-list>
- </mat-sidenav>
+  </div>
+   
 
 
- <!-- <mat-sidenav #secmenu mode="over" position="end" >
-   <mat-nav-list>
-     
-     <div *ngIf="loggedIn">
-      <h3 style="margin-left:1rem">Tej pratap</h3>
-      <mat-divider></mat-divider>
-      <a mat-list-item routerLink='/mydashboard' (click)="secmenu.toggle()"><mat-icon>dashboard</mat-icon>Dashboard</a>
-      <mat-divider></mat-divider>
-      <a mat-list-item (click)="secmenu.toggle()" (click)="logout()"><mat-icon>lock</mat-icon>Logout</a>
-      <mat-divider></mat-divider>
-     </div>
-     <div *ngIf="!loggedIn">
-      <mat-divider></mat-divider>
-      <a mat-list-item routerLink='/login' (click)="secmenu.toggle()"><mat-icon>lock</mat-icon>Login</a>
-      <mat-divider></mat-divider>
-     </div>
 
-   </mat-nav-list>
- </mat-sidenav> -->
  
- <mat-sidenav-content>
-   <div  class="container">
-     <!-- <p> token-> {{token}}</p> -->
-     <router-outlet></router-outlet>
- 
-   </div>
- 
- </mat-sidenav-content>
- 
- 
- 
- 
- </mat-sidenav-container>
-</div>
 

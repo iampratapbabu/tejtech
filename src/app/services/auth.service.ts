@@ -64,7 +64,7 @@ export class AuthService {
        const httpOptions = {
          headers: new HttpHeaders({
            'x-access-token': token
-       })
+        })
        }
        this.http.get(`${environment.api}/api/users/protect`,httpOptions).subscribe(res=>{
        this.userData = res;
@@ -79,7 +79,7 @@ export class AuthService {
        });
      }
  
-   
+    
  
    }
 
@@ -101,7 +101,7 @@ export class AuthService {
           this.userData=serverResoponse.user;
           console.log(this.userData);
           this.toastr.success("successfully logged in",'Success');
-          this.router.navigate(['/mydashboard']);
+          this.router.navigate(['/home']);
           
         }
       },err=>{

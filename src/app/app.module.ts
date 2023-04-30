@@ -40,7 +40,8 @@ import { SingleCourseComponent } from './pages/courses/single-course/single-cour
 import { FinanceComponent } from './pages/finance/finance.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
-import { LoaderComponent } from './components/loader/loader.component'
+import { LoaderComponent } from './components/loader/loader.component';
+import { HeaderComponent } from './components/header/header.component'
 
 
 
@@ -59,6 +60,7 @@ import { LoaderComponent } from './components/loader/loader.component'
     LoginComponent,
     RegisterComponent,
     LoaderComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
